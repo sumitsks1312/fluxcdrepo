@@ -1,0 +1,13 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: podinfo-kustomization
+  namespace: flux-system
+spec:
+  interval: 5m0s
+  path: ./kustomize
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: podinfo-repo
+  targetNamespace: default
